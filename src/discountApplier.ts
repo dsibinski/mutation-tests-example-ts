@@ -3,7 +3,7 @@ import { Product } from './product';
 export class DiscountApplier {
     getDiscountPercentageValue(products: Product[]): number {
         let discountValue = 0;
-        if (products.length == 1) {
+        if (products.length === 1) {
             return 0;
         }
 
