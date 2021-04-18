@@ -11,7 +11,8 @@ export class DiscountApplier {
 
         if (allProductsQuantity > 10 && allProductsQuantity <= 50) {
             discountValue += 10;
-        } else if (allProductsQuantity > 50) {
+        }
+        if (allProductsQuantity > 50) {
             discountValue += 15;
         }
 
@@ -19,9 +20,11 @@ export class DiscountApplier {
 
         if (allProductsPrice > 100 && allProductsPrice <= 500) {
             discountValue += 5;
-        } else if (allProductsPrice > 500 && allProductsPrice <= 2000) {
+        }
+        if (allProductsPrice > 500 && allProductsPrice <= 2000) {
             discountValue += 10;
-        } else if (allProductsPrice > 2000) {
+        }
+        if (allProductsPrice > 2000) {
             discountValue += 25;
         }
 

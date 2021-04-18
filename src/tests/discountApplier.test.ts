@@ -57,4 +57,44 @@ describe("DiscountApplier", () => {
         let discountValue = discountApplier.getDiscountPercentageValue(products);
         expect(discountValue).toBe(0);
     });
+
+    it('getDiscountPercentageValue returns 10 percent discount for total quantity of 50', () => {
+        let discountApplier = new DiscountApplier();
+        let products = [new Product("Product 1", 1, 25), new Product("Product 2", 1, 25)];
+
+        let discountValue = discountApplier.getDiscountPercentageValue(products);
+        expect(discountValue).toBe(10);
+    });
+
+    it('getDiscountPercentageValue returns 0 percent discount for total quantity of 10 and total price of 2', () => {
+        let discountApplier = new DiscountApplier();
+        let products = [new Product("Product 1", 1, 5), new Product("Product 2", 1, 5)];
+
+        let discountValue = discountApplier.getDiscountPercentageValue(products);
+        expect(discountValue).toBe(0);
+    });
+
+    it('getDiscountPercentageValue returns 0 percent discount for 2 products with total quantity of 2 and total price of 100', () => {
+        let discountApplier = new DiscountApplier();
+        let products = [new Product("Product 1", 50, 1), new Product("Product 2", 50, 1)];
+
+        let discountValue = discountApplier.getDiscountPercentageValue(products);
+        expect(discountValue).toBe(0);
+    });
+
+    it('getDiscountPercentageValue returns 5 percent discount for 2 products with total quantity of 2 and total price of 500', () => {
+        let discountApplier = new DiscountApplier();
+        let products = [new Product("Product 1", 250, 1), new Product("Product 2", 250, 1)];
+
+        let discountValue = discountApplier.getDiscountPercentageValue(products);
+        expect(discountValue).toBe(5);
+    });
+
+    it('getDiscountPercentageValue returns 10 percent discount for 2 products with total quantity of 2 and total price of 2000', () => {
+        let discountApplier = new DiscountApplier();
+        let products = [new Product("Product 1", 1000, 1), new Product("Product 2", 1000, 1)];
+
+        let discountValue = discountApplier.getDiscountPercentageValue(products);
+        expect(discountValue).toBe(10);
+    });
 })
