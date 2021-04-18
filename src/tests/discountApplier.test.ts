@@ -49,4 +49,12 @@ describe("DiscountApplier", () => {
         let discountValue = discountApplier.getDiscountPercentageValue(products);
         expect(discountValue).toBe(25);
     });
+
+    it('getDiscountPercentageValue returns 0 discount for 1 product with quantity of 11', () => {
+        let discountApplier = new DiscountApplier();
+        let products = [new Product("Product 1", 25, 11)];
+
+        let discountValue = discountApplier.getDiscountPercentageValue(products);
+        expect(discountValue).toBe(0);
+    });
 })
